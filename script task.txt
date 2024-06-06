@@ -1,0 +1,30 @@
+root@ip-172-31-6-182:/# cat network.sh
+#!/bin/bash
+read -p "Enter the website to check the HTTP error code: " URL
+http_code=$(curl --write-out %{http_code} --silent --output /dev/null $URL)
+
+if [ $http_code -eq 200 ]; then
+        echo "The Response code of $URL is : $http_code"
+        echo "The HTTP connection is Success"
+else
+        echo "The Response code of $URL is : $http_code"
+        echo "The HTTP connection is Failure"
+
+fi
+root@ip-172-31-6-182:/# ./network.sh
+Enter the website to check the HTTP error code: ww.guvi.in
+The Response code of ww.guvi.in is : 000
+The HTTP connection is Failure
+root@ip-172-31-6-182:/# ./network.sh
+Enter the website to check the HTTP error code: https://www.guvi.in/sign-in/
+The Response code of https://www.guvi.in/sign-in/ is : 200
+The HTTP connection is Success
+root@ip-172-31-6-182:/#
+
+
+
+
+
+
+
+
