@@ -1,0 +1,22 @@
+root@ip-172-31-6-182:/home/ubuntu# docker --version
+Docker version 24.0.7, build 24.0.7-0ubuntu4
+root@ip-172-31-6-182:/home/ubuntu# docker images
+REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+hello-world   latest    d2c94e258dcb   13 months ago   13.3kB
+root@ip-172-31-6-182:/home/ubuntu# docker volumes
+docker: 'volumes' is not a docker command.
+See 'docker --help'
+root@ip-172-31-6-182:/home/ubuntu# docker volume create 123saran
+123saran
+root@ip-172-31-6-182:/home/ubuntu# docker volume ls
+DRIVER    VOLUME NAME
+local     123saran
+root@ip-172-31-6-182:/home/ubuntu# docker network create my-netowrk
+85a3650391af382e829fbf395a9f1fc9d3b30e5cf46131587cc05381ca6b320d
+root@ip-172-31-6-182:/home/ubuntu# docker network ls
+NETWORK ID     NAME         DRIVER    SCOPE
+e1cdbfc1d4fe   bridge       bridge    local
+2aba8d35f829   host         host      local
+85a3650391af   my-netowrk   bridge    local
+dbc7507ff123   none         null      local
+root@ip-172-31-6-182:/home/ubuntu#
